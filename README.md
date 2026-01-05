@@ -19,3 +19,11 @@ A simple and interactive web application to help users track and manage daily ha
 - **Vue.js** – Frontend interactivity and dynamic updates  
 - **MongoDB Atlas** – Backend database 
 
+---
+## Setup Instructions
+
+1. Clone the repository
+2. Install dependencies
+3. Create a `.env` file in the root directory
+4. Start the server
+

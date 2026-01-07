@@ -1,11 +1,14 @@
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors"); 
 const connectDB = require("./config/db");
 
 // Connect to MongoDB Atlas
 connectDB();
 
 const app = express();
+
+app.use(cors()); 
 app.use(express.json());
 
 // Test route
@@ -20,4 +23,5 @@ if (!process.env.MONGO_URI) {
   console.error("MONGO_URI is not defined");
   process.exit(1);
 }
+
 

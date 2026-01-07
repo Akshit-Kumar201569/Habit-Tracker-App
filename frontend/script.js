@@ -7,7 +7,7 @@ const toggleIcon = document.getElementById("toggleIcon");
 const modeToggle = document.querySelector(".mode-toggle");
 const filterButtons = document.querySelectorAll(".filters button");
 
-const API_URL = "http://localhost:5000/api/habits";
+const API_URL = "https://habit-tracker-app-a35n.onrender.com/habits";
 
 let habits = [];
 let darkMode = JSON.parse(localStorage.getItem("darkMode")) || false;
@@ -131,3 +131,4 @@ function updateProgress() {
 
 /* ------------------ INIT ------------------ */
 fetchHabits();
+

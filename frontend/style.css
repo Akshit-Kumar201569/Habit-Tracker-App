@@ -1,0 +1,190 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Day background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("BG- Images/Day.jpg") center / cover no-repeat;
+  transition: opacity 0.8s ease-in-out;
+  z-index: -1;
+  opacity: 1;
+}
+
+/* Night background overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("BG- Images/Night.jpg") center / cover no-repeat;
+  transition: opacity 0.8s ease-in-out;
+  z-index: -1;
+  opacity: 0;
+}
+
+/* When dark mode is active */
+body.dark::before {
+  opacity: 0;
+}
+
+body.dark::after {
+  opacity: 1;
+}
+
+
+/* Tracker */
+.tracker {
+  width: 400px;
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+/* Add Habit */
+.add-habit {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.add-habit input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px 0 0 10px;
+  border: none;
+  outline: none;
+}
+
+.add-habit button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 0 10px 10px 0;
+  background: #4caf50;
+  color: #fff;
+  cursor: pointer;
+}
+
+.add-habit button:hover {
+  background: #45a049;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.filters button {
+  flex: 1;
+  margin: 0 3px;
+  padding: 6px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.filters button.active {
+  background: #4caf50;
+  color: white;
+}
+
+/* Habit List */
+#habitList {
+  list-style: none;
+  margin-bottom: 15px;
+}
+
+#habitList li {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#habitList li:hover {
+  transform: scale(1.03);
+}
+
+#habitList li.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* Delete Button */
+.delete-btn {
+  background: #ff4d4d;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Progress */
+.progress-container {
+  height: 18px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #4caf50;
+  transition: width 0.4s ease;
+}
+
+/* Toggle */
+.mode-toggle {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 0 10px 10px 0;
+  background: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+/* Dark Mode */
+body.dark {
+  background: url("BG- Images/Night.jpg") center / cover no-repeat;
+}
+
+body.dark .tracker {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+body.dark .progress-bar,
+body.dark .filters button.active {
+  background: #2196f3;
+}
